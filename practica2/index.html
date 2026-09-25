@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica 2</title>
+</head>
+<body>
+  <h1>Práctica 2 – Git y GitHub</h1>
+  <p>Nombre: Fernando Fernández</p>
+  <p>Carrera: Ingeniería de Sistemas</p>
+  <p>Fecha: 24/09/2026</p>
+
+  <h2>Preguntas y Respuestas</h2>
+  <p><strong>1. ¿Qué es Git y cuál es su función principal dentro de un proyecto de desarrollo?</strong> </p>
+  <p><strong>Respuesta:</strong> Git es un sistema de control de versiones distribuido que permite registrar y administrar los cambios realizados en los archivos de un proyecto de software.<br>Su función principal es mantener un historial seguro de todas las modificaciones, lo que facilita:
+
+Guardar versiones del código y volver atrás si ocurre un error.<br></p>
+
+  <p><strong>2. ¿Cuál es la diferencia entre Git y GitHub y qué función cumple cada uno?</strong> </p>
+  <p><strong>Respuesta:</strong> <strong>Git:</strong> es un programa que se instala en tu computadora. Su función es llevar el control de versiones de tu proyecto, guardando cada cambio en forma de commits, permitiendo trabajar con ramas y recuperar versiones anteriores.<br><strong>GitHub:</strong> es una plataforma en línea que utiliza Git, pero además ofrece un espacio en la nube para almacenar repositorios y colaborar con otros. Permite compartir tu código, trabajar en equipo, revisar cambios y publicar proyectos.<br></p>
+
+  <p><strong>3. ¿Qué pasos se deben seguir en Git para guardar los cambios realizados en un proyecto y crear un
+commit? </strong> </p>
+  <p><strong>Respuesta:</strong><br>Verificar el estado del repositorio<br><strong>git status</strong><br>Agregar los archivos al área de preparación (staging area)<br>Para un archivo específico:<br><strong>git add nombre_archivo.html</strong><br>Para todos los archivos modificados:<br><strong>git add .</strong><br>Crear el commit con un mensaje descriptivo<br><strong>git commit -m "Agregada página index.html con horarios"</strong><br>(Opcional) Subir los cambios al repositorio remoto (GitHub)<br><strong>git push</strong> </p>
+
+  <p><strong>4. ¿Qué comandos se utilizan para conectar un repositorio local con un repositorio de GitHub y
+posteriormente subir los cambios? Explique brevemente la función de cada uno. </strong> </p>
+  <p><strong>Respuesta:</strong> <ol>
+    <li>Conectar el repositorio local con el remoto (GitHub)<br><strong>git remote add origin https://github.com/usuario/nombre-repositorio.git</strong><br>Este comando enlaza tu proyecto local con el repositorio remoto en GitHub.<br>origin es el nombre que se le da por defecto al remoto.<br>La URL es la dirección de tu repositorio en GitHub</li>
+    <li>Verificar la conexión<br><strong>git remote -v</strong><br> Muestra las direcciones del repositorio remoto para confirmar que está bien configurado.</li>
+    <li>Subir los cambios por primera vez<br><strong>git push -u origin main</strong><br>Envía tu rama principal (main) al repositorio remoto.<br>-u establece la rama remota como predeterminada, así después solo necesitas usar git push.</li>
+    <li>Subir cambios posterioares<br><strong>git push</strong><br> Actualiza el repositorio remoto con los commits nuevos que hayas hecho en tu rama local.</li>
+  </ol></p>
+
+  <p><strong>5. ¿Qué es una rama (branch) en Git y en qué situaciones puede ser útil trabajar con una rama
+diferente a main? </strong> </p>
+  <p><strong>Respuesta:</strong>Una rama (branch) en Git es una línea de desarrollo independiente dentro de un repositorio. En otras palabras, es como una copia paralela del proyecto donde puedes trabajar sin afectar directamente la versión principal (generalmente llamada main). </p>
+
+  <p><strong>6. Explique el proceso para crear una nueva rama, realizar cambios en ella y posteriormente subir esa
+rama a un repositorio de GitHub. </strong> </p>
+  <p><strong>Respuesta:</strong> <ol>
+    <li>Crear la rama<br><strong>git branch nombre_rama</strong><br>Crea una nueva rama en tu repositorio local.</li>
+    <li>Cambiarte a la rama creada<br><strong>git checkout nombre_rama</strong><br>Te mueve a esa rama para empezar a trabajar en ella.</li>
+    <li>Realizar cambios en los archivos<br>Edita o agrega archivos en tu proyecto (por ejemplo, index.html, horario_materias.html, horario_auxiliatura.html).</li>
+    <li>Guardar los cambios en la rama (commit<br><strong>git add.git commit -m "Agregados archivos de práctica 2 en rama auxiliatura"</strong><br>git add . prepara todos los archivos modificados y git commit guarda los cambios con un mensaje.</li>
+    <li>Subir la rama al repositorio remoto (GitHub)<br><strong>git push origin nombre_rama</strong><br> Envía la rama al repositorio remoto en GitHub.</li>
+  </ol></p>
+
+  <p><strong>7. ¿Qué es un conflicto en Git y qué pasos se deben seguir para resolverlo antes de combinar los
+cambios de una rama con main? </strong> </p>
+  <p><strong>Respuesta:</strong>Un conflicto en Git ocurre cuando dos ramas han modificado la misma parte de un archivo de manera diferente y Git no puede decidir automáticamente cuál versión 
+    <ol>
+      <li>Intentar la combinación<br><strong>git merge nombre_rama</strong><br>Si hay conflictos, Git lo notificará y marcará las secciones problemáticas en los archivos</li>
+      <li>Abrir los archivos en conflicto <br><strong><<<<<<< HEAD
+      código de la rama main
+      =======
+      código de la rama auxiliatura
+      >>>>>>> auxiliatura</strong><br>Indican las dos versiones que chocan</li>
+      <li>Editar manualmente el archivo<br> Elimina las marcas (<<<<<<<, =======, >>>>>>>) y decide qué parte del código conservar, o combina ambas si es necesario.</li>
+      <li>Marcar el conflicto como resuelto<br><strong>git add nombre_archivo</strong><br>Esto indica que el archivo ya fue corregido.</li>
+      <li>Finalizar el merge<br><strong>git commit</strong><br> Crea un commit que registra la resolución del conflicto.</li>
+      <li>Subir los cambios al repositorio remoto<br><strong>git push</strong><br>Actualiza la rama en GitHub con la versión corregida.</li>
+    </ol></p>
+  <h2>MI HORARIO</h2>
+  <p>Este es mi horario de la gestión 2026 semestre 2 =D</p>
+  <a href="horario_materias.html">Horario de Materias</a><br>
+  <a href="horario_auxiliatura.html">Horario de Auxiliatura</a>
+
+</body>
+</html>
